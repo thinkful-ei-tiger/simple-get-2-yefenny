@@ -1,0 +1,30 @@
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.container input{
+    width: fit-content;
+    margin: 10px 0;
+}
+
+.hidden{
+    display: none;
+}
+
+img{
+    width: 300px;
+    height: 300px;;
+}
