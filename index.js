@@ -1,23 +1,23 @@
-function displayImages(images) {
-  let toDisplay = '';
-  images.forEach((image) => {
-    toDisplay += `<a href="${image}" target='_blank'> <img src=${image} alt='dog image' /> </a> `;
-  });
-
-  $('.js-images').html(toDisplay);
+function displayImages(image) {
+  let toReturn = '';
+  if (image.status === 'success') {
+    toReturn = `<a href="${image.message}" target='_blank'> <img src=${image.message} alt='dog image' /> </a> `;
+  } else toReturn = `<p>${image.message}</p>`;
+  $('.js-image').html(toReturn);
   $('.js-results').removeClass('hidden');
 }
-function getDogImage(number) {
-  url = `https://dog.ceo/api/breeds/image/random/${number}`;
+function getDogImage(breed) {
+  url = `https://dog.ceo/api/breed/${breed}/images/random`;
   fetch(url)
     .then((response) => response.json())
-    .then((jsonResponse) => displayImages(jsonResponse.message));
+    .then((jsonResponse) => displayImages(jsonResponse))
+    .catch((error) => console.log(error));
 }
 
 function handleForm() {
   $('form').on('submit', function (event) {
     event.preventDefault();
-    getDogImage($('#amountOfImage').val());
+    getDogImage($('#breed').val());
   });
 }
 

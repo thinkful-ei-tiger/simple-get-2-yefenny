@@ -11,15 +11,16 @@
     <div class="container">
         <h1>Dog Api</h1>
             <form action="">
-                <label for="amountOfImage">Insert the number of random images that you want from 1-50:</label>
-                <input type="number" name="amountOfImage" id="amountOfImage" max="50" min="1" value="3" required>
-                <input type="submit" value="Get dogs pics">
+                <label for="breed">Insert the breed :</label>
+                <input type="text" name="breed" id="breed" required>
+                <input type="submit" value="Get dog pic">
             </form>
             <section class="js-results hidden">
-                <h2>Look at this dog</h2>
-                <div class="js-images"></div>
-    
-            </section>
+                <h2>Look at this dog!</h2>
+                <div class="js-image">
+
+                </div>
+              </section>
         </div>
         
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
